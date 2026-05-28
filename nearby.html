@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nearby Insights - Corbett Sanctuary</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9f7",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#aacec3",
+                        "outline-variant": "#c1c8c4",
+                        "surface-container-high": "#e9e8e6",
+                        "surface-dim": "#dadad8",
+                        "on-tertiary-fixed-variant": "#424845",
+                        "on-secondary-fixed": "#0b1f18",
+                        "primary-fixed": "#c5eadf",
+                        "surface-container-highest": "#e3e2e0",
+                        "inverse-on-surface": "#f1f1ef",
+                        "on-secondary-fixed-variant": "#374b43",
+                        "tertiary": "#1c2220",
+                        "on-tertiary-fixed": "#171d1b",
+                        "tertiary-fixed": "#dee4e0",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#aacec3",
+                        "tertiary-fixed-dim": "#c2c8c4",
+                        "secondary-fixed": "#d1e8dd",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#717976",
+                        "on-surface-variant": "#414846",
+                        "on-primary-fixed": "#00201a",
+                        "surface": "#faf9f7",
+                        "on-secondary-container": "#52675e",
+                        "on-primary-container": "#83a69c",
+                        "secondary": "#4e635a",
+                        "primary": "#01261f",
+                        "surface-variant": "#e3e2e0",
+                        "on-tertiary-container": "#9ba19d",
+                        "on-surface": "#1a1c1b",
+                        "primary-container": "#1a3c34",
+                        "inverse-surface": "#2f3130",
+                        "secondary-container": "#cee5da",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "surface-bright": "#faf9f7",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f4f3f1",
+                        "on-primary-fixed-variant": "#2b4d44",
+                        "secondary-fixed-dim": "#b5ccc1",
+                        "surface-tint": "#43655c",
+                        "surface-container": "#efeeec",
+                        "tertiary-container": "#323835"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 20px 40px rgba(26, 60, 52, 0.06);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 40s linear infinite;
+        }
+
+        .animate-marquee:hover,
+        .group:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <link rel="prefetch" href="index.html">
+    <style>
+        @view-transition { navigation: auto; }
+        ::view-transition-old(root) { animation: fade-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        ::view-transition-new(root) { animation: fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        @keyframes fade-out { to { opacity: 0; transform: scale(0.98); } }
+        @keyframes fade-in { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
+        body.page-transitioning { opacity: 0 !important; transform: scale(0.98) !important; }
+        body { transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!document.startViewTransition) {
+                document.body.style.opacity = '0';
+                document.body.style.transform = 'scale(1.02)';
+                requestAnimationFrame(() => {
+                    document.body.style.opacity = '1';
+                    document.body.style.transform = 'scale(1)';
+                });
+            }
+        });
+        window.navigateCinematic = function(url) {
+            if (!document.startViewTransition) {
+                document.body.classList.add('page-transitioning');
+                setTimeout(() => window.location.href = url, 400);
+            } else {
+                window.location.href = url;
+            }
+        };
+    </script>
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <!-- Top App Bar -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-surface/70 shadow-sm h-20">
+        <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+            <button class="text-primary active:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <h1 class="font-headline-md text-headline-md text-primary tracking-tight">Corbett Sanctuary</h1>
+            <button class="text-primary active:opacity-80 transition-opacity"
+                onclick="navigateCinematic('index.html')">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+    </nav>
+    <main class="pt-20 pb-32">
+        <!-- Hero Section -->
+        <section class="relative w-full h-[460px] flex items-center justify-center overflow-hidden">
+            <img alt="Corbett Forest" class="absolute inset-0 w-full h-full object-cover"
+                src="assets/images/Wahcantt_Pakistan_nature_photography.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/20 to-background"></div>
+            <div class="relative z-10 px-margin-mobile text-center max-w-xl mx-auto animate-fade-in mt-10">
+                <h2
+                    class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-6 drop-shadow-lg">
+                    Discover Real Corbett</h2>
+                <div class="relative mb-6">
+                    <input
+                        class="w-full bg-surface-container-lowest/90 backdrop-blur-md border-none rounded-full h-14 px-12 text-on-surface shadow-xl focus:ring-2 focus:ring-primary/50 transition-all"
+                        placeholder="Search authentic places..." type="text" />
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary">search</span>
+                </div>
+            </div>
+        </section>
+        <!-- Continuous Carousel -->
+        <section class="mt-12 mb-16 overflow-hidden">
+            <div class="px-margin-mobile mb-6 max-w-container-max mx-auto">
+                <span class="text-secondary font-label-lg text-label-lg tracking-widest uppercase block mb-2">Featured
+                    Realities</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Authentic Escapes</h3>
+            </div>
+
+            <div class="flex overflow-hidden group w-full">
+                <!-- Track 1 -->
+                <div class="flex gap-6 animate-marquee shrink-0 px-3">
+                    <!-- Slide 1 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Corbett_Falls_20266461970.jpg" alt="Corbett Falls"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Waterfall</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Corbett Falls</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                A scenic 20-meter waterfall surrounded by dense teak forest. Located 25 km from
+                                Ramnagar, offering a serene atmosphere perfect for nature walks.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Garjiya_devi_temple.jpeg" alt="Garjiya Devi Temple"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Pilgrimage</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Garjiya Devi Temple</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                Sacred shrine perched atop a large rock in the Kosi River. A beautiful site offering
+                                stunning riverside views and spiritual calm.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Kosi_River.jpg" alt="Kosi River"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                River Escape</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Kosi Riverside</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                The lifeline of Corbett. Experience calming sunset walks, birdwatching, and riverside
+                                moments along the boulder-strewn banks.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Bengal_tiger_Panthera_tigris_tigris_female_3.jpg" alt="Tiger in Corbett"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Wildlife</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Tiger Tracking</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                Experience the thrill of spotting the Royal Bengal Tiger in its natural habitat across
+                                the various safari zones of Corbett.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Corbett Museum -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Jim_Corbett_museum.jpeg"
+                            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/cd/Wahcantt%2C_Pakistan_%28nature_photography%29.jpg'"
+                            alt="Corbett Museum"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Museum</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Corbett Museum</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                Located at the Aamdanda entry gate of Dhikala, this museum preserves the legacy of Jim
+                                Corbett with his personal belongings, letters, and rare photographs.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Track 2 -->
+                <div class="flex gap-6 animate-marquee shrink-0 px-3" aria-hidden="true">
+                    <!-- Slide 1 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Corbett_Falls_20266461970.jpg" alt="Corbett Falls"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Waterfall</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Corbett Falls</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                A scenic 20-meter waterfall surrounded by dense teak forest. Located 25 km from
+                                Ramnagar, offering a serene atmosphere perfect for nature walks.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Garjiya_devi_temple.jpeg" alt="Garjiya Devi Temple"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Pilgrimage</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Garjiya Devi Temple</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                Sacred shrine perched atop a large rock in the Kosi River. A beautiful site offering
+                                stunning riverside views and spiritual calm.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Kosi_River.jpg" alt="Kosi River"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                River Escape</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Kosi Riverside</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                The lifeline of Corbett. Experience calming sunset walks, birdwatching, and riverside
+                                moments along the boulder-strewn banks.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Bengal_tiger_Panthera_tigris_tigris_female_3.jpg" alt="Tiger in Corbett"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Wildlife</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Tiger Tracking</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                Experience the thrill of spotting the Royal Bengal Tiger in its natural habitat across
+                                the various safari zones of Corbett.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Corbett Museum -->
+                    <div
+                        class="shrink-0 w-[85vw] md:w-[400px] h-[450px] relative rounded-3xl overflow-hidden custom-shadow cursor-pointer group/item">
+                        <img src="assets/images/Jim_Corbett_museum.jpeg"
+                            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/cd/Wahcantt%2C_Pakistan_%28nature_photography%29.jpg'"
+                            alt="Corbett Museum"
+                            class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover/item:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-8 group-hover/item:translate-y-0 transition-transform duration-500">
+                            <div
+                                class="bg-primary/80 backdrop-blur-sm text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-3">
+                                Museum</div>
+                            <h4 class="font-headline-md text-2xl mb-2 drop-shadow-lg">Corbett Museum</h4>
+                            <p
+                                class="text-sm text-white/90 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                                Located at the Aamdanda entry gate of Dhikala, this museum preserves the legacy of Jim
+                                Corbett with his personal belongings, letters, and rare photographs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-on-surface-variant font-body-sm text-body-sm mt-6 text-center max-w-container-max mx-auto">
+                Hover to pause • Authentic real photography</p>
+        </section>
+        <!-- Beyond Safari Experiences -->
+        <section class="mt-20 px-margin-mobile max-w-container-max mx-auto">
+            <div class="mb-10">
+                <div class="mb-10">
+                    <span class="text-secondary font-label-lg text-label-lg tracking-widest uppercase block">Beyond
+                        Safari</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Experiential luxury escapes
+                        outside Corbett's safari zones</h3>
+                    <p class="max-w-2xl text-on-surface-variant font-body-md text-body-md">From riverside Shakti calm
+                        and premium adventure energy to rooftop bungee thrills and curated night sky experiences, these
+                        highlights are designed for travelers seeking authentic luxury outside the core park zones.</p>
+                </div>
+                <div class="grid gap-8 lg:grid-cols-3 mb-10">
+                    <div
+                        class="group relative bg-surface-container-lowest rounded-xl overflow-hidden custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-72 overflow-hidden">
+                            <img alt="Garjiya Devi Temple and Kosi riverside"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="assets/images/Kosi_River.jpg" />
+                        </div>
+                        <div
+                            class="p-6 glass-card absolute bottom-4 left-4 right-4 rounded-lg border border-white/40 transition-all duration-500">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-headline-sm text-on-surface">Garjiya Devi Temple + Kosi Riverside
+                                    </h4>
+                                    <p class="text-on-surface-variant font-body-sm">Sacred riverside calm outside the
+                                        safari boundary.</p>
+                                </div>
+                                <span
+                                    class="px-2 py-1 bg-secondary-container text-primary text-[10px] font-bold uppercase rounded tracking-wider">Riverside
+                                    Shakti</span>
+                            </div>
+                            <div
+                                class="space-y-3 text-on-surface-variant font-body-sm text-body-sm max-h-0 opacity-0 overflow-hidden group-hover:max-h-48 group-hover:opacity-100 group-hover:mt-3 transition-all duration-500">
+                                <p>About 14 km from Ramnagar on Ranikhet Road, this rock temple sits on the Kosi with
+                                    cafés, short walks, riverside stays, bonfire camping and sunset photography.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative bg-surface-container-lowest rounded-xl overflow-hidden custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-72 overflow-hidden">
+                            <img alt="Devbhoomi Outdoor Adventure Park in Ramnagar"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="assets/images/GoApeZipline.jpg" />
+                        </div>
+                        <div
+                            class="p-6 glass-card absolute bottom-4 left-4 right-4 rounded-lg border border-white/40 transition-all duration-500">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-headline-sm text-on-surface">Devbhoomi Outdoor Adventure Park</h4>
+                                    <p class="text-on-surface-variant font-body-sm">Day adventure outside the park
+                                        perimeter.</p>
+                                </div>
+                                <span
+                                    class="px-2 py-1 bg-secondary-container text-primary text-[10px] font-bold uppercase rounded tracking-wider">Dhikuli,
+                                    Ramnagar</span>
+                            </div>
+                            <div
+                                class="space-y-3 text-on-surface-variant font-body-sm text-body-sm max-h-0 opacity-0 overflow-hidden group-hover:max-h-48 group-hover:opacity-100 group-hover:mt-3 transition-all duration-500">
+                                <p>Zip-line, rope courses, wall climbing, rappelling, Burma bridge and camping for a
+                                    lively outdoor luxury day out.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative bg-surface-container-lowest rounded-xl overflow-hidden custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-72 overflow-hidden">
+                            <img alt="Starscapes Observatory Corbett night sky"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="assets/images/Messier_24_infrared_red_green.jpg" />
+                        </div>
+                        <div
+                            class="p-6 glass-card absolute bottom-4 left-4 right-4 rounded-lg border border-white/40 transition-all duration-500">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-headline-sm text-on-surface">Starscapes Observatory Corbett</h4>
+                                    <p class="text-on-surface-variant font-body-sm">Luxury night sky immersion near
+                                        Chocolate Room Café.</p>
+                                </div>
+                                <span
+                                    class="px-2 py-1 bg-secondary-container text-primary text-[10px] font-bold uppercase rounded tracking-wider">Dhikuli
+                                    village</span>
+                            </div>
+                            <div
+                                class="space-y-3 text-on-surface-variant font-body-sm text-body-sm max-h-0 opacity-0 overflow-hidden group-hover:max-h-48 group-hover:opacity-100 group-hover:mt-3 transition-all duration-500">
+                                <p>Stargazing, astrophotography, astronomy sessions and planet observation in darker
+                                    skies outside the core safari zones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-8 lg:grid-cols-2 mb-10">
+                    <div
+                        class="group relative bg-surface-container-lowest rounded-xl overflow-hidden custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-64 overflow-hidden">
+                            <img alt="Falcon Drop bungee jump"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="assets/images/Bungee_Jumping.png" />
+                        </div>
+                        <div
+                            class="p-6 glass-card absolute bottom-4 left-4 right-4 rounded-lg border border-white/40 transition-all duration-500">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-headline-sm text-on-surface">Falcon Drop – Freestyle Bungey</h4>
+                                    <p class="text-on-surface-variant font-body-sm">101m jump near Ramnagar/Garjiya
+                                        area.</p>
+                                </div>
+                                <span
+                                    class="px-2 py-1 bg-secondary-container text-primary text-[10px] font-bold uppercase rounded tracking-wider">Sept
+                                    2025</span>
+                            </div>
+                            <div
+                                class="space-y-3 text-on-surface-variant font-body-sm text-body-sm max-h-0 opacity-0 overflow-hidden group-hover:max-h-48 group-hover:opacity-100 group-hover:mt-3 transition-all duration-500">
+                                <p>Premium adrenaline, giant swing and modern outdoor thrills. Book directly with the
+                                    operator to confirm exact site, height and safety readiness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative bg-surface-container-lowest rounded-xl overflow-hidden custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-64 overflow-hidden">
+                            <img alt="Panther Edge rooftop bungee"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="assets/images/Rocket_Bungee_Jumping.jpg" />
+                        </div>
+                        <div
+                            class="p-6 glass-card absolute bottom-4 left-4 right-4 rounded-lg border border-white/40 transition-all duration-500">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-headline-sm text-on-surface">Panther Edge – Rooftop Bungey</h4>
+                                    <p class="text-on-surface-variant font-body-sm">104m rooftop jump recently promoted
+                                        near Corbett.</p>
+                                </div>
+                                <span
+                                    class="px-2 py-1 bg-secondary-container text-primary text-[10px] font-bold uppercase rounded tracking-wider">Premium
+                                    Launch</span>
+                            </div>
+                            <div
+                                class="space-y-3 text-on-surface-variant font-body-sm text-body-sm max-h-0 opacity-0 overflow-hidden group-hover:max-h-48 group-hover:opacity-100 group-hover:mt-3 transition-all duration-500">
+                                <p>Extreme adventure and premium adrenaline. Treat this as a private operator experience
+                                    and verify details by calling ahead.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Riverside camping" class="w-full h-full object-cover"
+                                src="assets/images/Campfire_and_sparks_in_Anttoora_3.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Riverside Camping</h4>
+                            <p class="text-on-surface-variant font-body-sm">Luxury tents and calm Kosi river evenings.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Birdwatching in the forest" class="w-full h-full object-cover"
+                                src="assets/images/Pied_kingfisher_Ceryle_rudis_leucomelanurus_female.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Birdwatching Escapes</h4>
+                            <p class="text-on-surface-variant font-body-sm">Quiet mornings with local feathered life.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Nature walk path" class="w-full h-full object-cover"
+                                src="assets/images/Forest_ranger_walking_through_the_trail_to_Netravati_peak.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Nature Walks</h4>
+                            <p class="text-on-surface-variant font-body-sm">Curated short hikes beside river and forest
+                                edge.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Cycling trail" class="w-full h-full object-cover"
+                                src="assets/images/Mountain_Bike_Trail_-_geograph.org.uk_-_265480.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Cycling Trails</h4>
+                            <p class="text-on-surface-variant font-body-sm">Easy luxury rides through village and
+                                riverside lanes.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Forest edge café" class="w-full h-full object-cover"
+                                src="assets/images/Outdoor_Cafe.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Forest-edge Cafés</h4>
+                            <p class="text-on-surface-variant font-body-sm">Authentic cafés with river views and calm
+                                luxury.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Bonfire evening" class="w-full h-full object-cover"
+                                src="assets/images/Campfire_and_sparks_in_Anttoora_3.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Bonfire Evenings</h4>
+                            <p class="text-on-surface-variant font-body-sm">Curated campfire nights with luxury lodge
+                                service.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Kosi river picnic" class="w-full h-full object-cover"
+                                src="assets/images/Kosi_River.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Kosi River Picnics</h4>
+                            <p class="text-on-surface-variant font-body-sm">Private riverside picnics and calm water
+                                escapes.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-3xl bg-surface-container-low custom-shadow transition-transform duration-500 hover:-translate-y-2">
+                        <div class="h-44 overflow-hidden rounded-t-3xl">
+                            <img alt="Outdoor photography spot" class="w-full h-full object-cover"
+                                src="assets/images/Wahcantt_Pakistan_nature_photography.jpg" />
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-headline-sm text-on-surface mb-2">Outdoor Photography</h4>
+                            <p class="text-on-surface-variant font-body-sm">Editorial nature moments along the river and
+                                hills.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- Explore by Mood -->
+        <section class="mt-24 px-margin-mobile max-w-container-max mx-auto overflow-hidden">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-8">Explore by Mood</h3>
+            <div class="flex overflow-hidden group w-full pb-4">
+                <!-- Track 1 -->
+                <div class="flex gap-6 animate-marquee shrink-0 px-3">
+                    <!-- Mood 1 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Peaceful+Nature+places+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">spa</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Peaceful Nature</p>
+                    </div>
+                    <!-- Mood 2 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Photography+spots+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">camera_alt</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Photography</p>
+                    </div>
+                    <!-- Mood 3 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Romantic+places+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">favorite</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Romantic</p>
+                    </div>
+                    <!-- Mood 4 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Adventure+activities+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">pets</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Adventure</p>
+                    </div>
+                </div>
+                <!-- Track 2 -->
+                <div class="flex gap-6 animate-marquee shrink-0 px-3" aria-hidden="true">
+                    <!-- Mood 1 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Peaceful+Nature+places+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">spa</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Peaceful Nature</p>
+                    </div>
+                    <!-- Mood 2 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Photography+spots+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">camera_alt</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Photography</p>
+                    </div>
+                    <!-- Mood 3 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Romantic+places+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">favorite</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Romantic</p>
+                    </div>
+                    <!-- Mood 4 -->
+                    <div class="flex-shrink-0 w-36 group/item cursor-pointer text-center"
+                        onclick="window.open('https://www.google.com/search?q=Adventure+activities+in+Jim+Corbett', '_blank')">
+                        <div
+                            class="w-36 h-36 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3 transition-all group-hover/item:bg-primary-container group-hover/item:text-white">
+                            <span
+                                class="material-symbols-outlined text-4xl group-hover/item:scale-110 transition-transform">pets</span>
+                        </div>
+                        <p class="font-label-lg text-label-lg text-on-surface">Adventure</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hidden Gems Section -->
+        <section class="mt-24 bg-surface-container-low py-20 px-margin-mobile">
+            <div class="max-w-container-max mx-auto">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="flex-1 space-y-6">
+                        <span class="text-secondary font-label-lg text-label-lg tracking-widest uppercase block">The
+                            Editorial Collection</span>
+                        <h3
+                            class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">
+                            Hidden Gems &amp; Secret Trails</h3>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Venture beyond the marked paths to discover Corbett's most intimate secrets. From the
+                            "Secret Whispering Trail" used by local conservationists to the silent orchid groves, these
+                            experiences are curated for the few who seek true sanctuary.
+                        </p>
+                        <button
+                            class="px-8 py-3 bg-primary text-white font-label-lg text-label-lg rounded-full shadow-lg hover:opacity-90 transition-opacity">Discover
+                            Secrets</button>
+                    </div>
+                    <div class="flex-1 w-full relative">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden custom-shadow transform rotate-2">
+                            <img alt="Secret Trail" class="w-full h-full object-cover"
+                                src="assets/images/Walking_into_the_forest.jpg" />
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -left-6 w-48 h-48 rounded-xl overflow-hidden border-8 border-white shadow-2xl hidden md:block -rotate-6">
+                            <img alt="Detail view" class="w-full h-full object-cover"
+                                src="assets/images/Tadpoles_of_Lesser_Treefrog_Dendropsophus_minutus_-_Flickr_-_Nature.Catcher.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Simple Map Preview -->
+        <section class="mt-24 px-margin-mobile max-w-container-max mx-auto">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-8">Surroundings</h3>
+            <div
+                class="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-lg border border-outline-variant/30 bg-surface-container-highest">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111082.35515263677!2d78.86877995811776!3d29.533256073142263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390a3ea4f9c67625%3A0x6b45f5d52cfcfae8!2sJim%20Corbett%20National%20Park!5e0!3m2!1sen!2sin!4v1716900000000!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+        <!-- Local Adventure Notes -->
+        <section class="mt-24 px-margin-mobile max-w-container-max mx-auto">
+            <div class="bg-surface-container-lowest rounded-3xl p-8 custom-shadow border border-outline-variant/30">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Corbett &amp; Ramnagar Adventure
+                    Notes</h3>
+                <div class="space-y-5 text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                    <p><strong>Devbhoomi Outdoor Adventure Activity Park, Ramnagar</strong> is a day adventure park
+                        outside the Corbett zones. Typical activities include rope courses, zip-line, wall climbing,
+                        obstacle activities and similar adventure challenges; public listings do not reliably confirm
+                        bungee jumping here, so treat it as a general adventure park.</p>
+                    <p><strong>New / recent bungee jumping setups near Corbett</strong> are private, roof- or
+                        structure-based jumps in the Corbett–Ramnagar belt, with heights reported around 101–104 m in
+                        2024–2025 posts. Operators market these as “one of the highest jumps in India,” but travelers
+                        must call the operator directly from phone numbers on those sites to confirm exact location and
+                        approach, height and safety standards, and operating status on the intended dates.</p>
+                    <p><strong>Night-sky / observatory experiences</strong> are becoming more visible around Corbett. A
+                        newly publicized astronomy initiative offers telescope-based stargazing and basic astronomy
+                        sessions from darker skies near the park. Many resorts and camps collaborate with such astronomy
+                        groups, so visitors can book “stargazing” or “astro nights” through the property or directly
+                        with the observatory provider.</p>
+                    <p><strong>Other non-safari adventure options</strong> in the wider Ramnagar–Corbett belt include
+                        seasonal river rafting and Kosi river activities, zip-lining, rappelling, rope courses, camping,
+                        bonfire nights, and indoor/outdoor games offered by various adventure camps and resorts.</p>
+                    <p>Advice: shortlist 3–4 adventure camps or resorts from local directories such as “Adventure Sports
+                        in Ramnagar, Nainital” on Justdial. Then call each property to ask whether they offer bungee or
+                        only rope/zip-line/wall climbing, and whether they can arrange night-sky or telescope sessions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- Results Modal -->
+    <div id="resultsModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-y-auto pt-20 pb-32">
+        <div class="max-w-4xl mx-auto px-margin-mobile">
+            <button onclick="closeResults()" class="mb-4 text-white font-label-lg text-label-lg hover:opacity-70">✕
+                Close</button>
+            <div id="resultsContent" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <script>
+        // Micro-interactions and subtle effects
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select sections to animate
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                observer.observe(section);
+            });
+        });
+
+        // Search bar interaction and live search
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchWrapper = searchInput.parentElement;
+
+        searchInput.addEventListener('focus', () => {
+            searchWrapper.classList.add('scale-[1.02]', 'z-50');
+            searchWrapper.style.transition = 'transform 0.3s ease';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchWrapper.classList.remove('scale-[1.02]', 'z-50');
+        });
+
+        // Create results dropdown container
+        const resultsContainer = document.createElement('div');
+        resultsContainer.className = 'absolute top-full left-0 right-0 mt-2 bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden hidden z-50 max-h-80 overflow-y-auto border border-white/10';
+        searchWrapper.appendChild(resultsContainer);
+
+        let uniqueItems = [];
+        // Gather searchable items on load
+        setTimeout(() => {
+            const searchItems = [];
+            document.querySelectorAll('h4').forEach((h4, i) => {
+                const card = h4.closest('.group') || h4.parentElement;
+                if (card) {
+                    if (!card.id) card.id = 'search-item-' + i;
+                    const img = card.querySelector('img');
+                    const p = card.querySelector('p');
+
+                    const title = h4.innerText;
+                    searchItems.push({
+                        title: title,
+                        desc: p ? p.innerText : '',
+                        img: img ? img.src : '',
+                        id: card.id
+                    });
+
+                    // Add click listener to the card itself to open Google search
+                    if (!card.hasAttribute('data-search-linked')) {
+                        card.setAttribute('data-search-linked', 'true');
+                        card.style.cursor = 'pointer';
+                        card.addEventListener('click', (e) => {
+                            if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
+                            window.open('https://www.google.com/search?q=' + encodeURIComponent(title + ' Jim Corbett'), '_blank');
+                        });
+                    }
+                }
+            });
+
+            const seen = new Set();
+            searchItems.forEach(item => {
+                if (!seen.has(item.title)) {
+                    seen.add(item.title);
+                    uniqueItems.push(item);
+                }
+            });
+        }, 500);
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            resultsContainer.innerHTML = '';
+
+            if (query.length === 0) {
+                resultsContainer.classList.add('hidden');
+                return;
+            }
+
+            resultsContainer.classList.remove('hidden');
+
+            const matches = uniqueItems.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.desc.toLowerCase().includes(query)
+            );
+
+            if (matches.length > 0) {
+                matches.forEach(match => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'flex items-center gap-4 p-4 hover:bg-surface-container-low cursor-pointer transition-colors border-b border-white/5 text-left';
+                    itemDiv.innerHTML = `
+                        ${match.img ? '<img src="' + match.img + '" class="w-12 h-12 rounded-lg object-cover" alt="">' : ''}
+                        <div>
+                            <div class="font-headline-sm text-on-surface text-sm mb-1">${match.title}</div>
+                            <div class="text-on-surface-variant font-body-sm text-xs line-clamp-1">${match.desc}</div>
+                        </div>
+                    `;
+                    itemDiv.addEventListener('click', () => {
+                        window.open('https://www.google.com/search?q=' + encodeURIComponent(match.title + ' Jim Corbett'), '_blank');
+                        resultsContainer.classList.add('hidden');
+                        searchInput.value = '';
+                    });
+                    resultsContainer.appendChild(itemDiv);
+                });
+            } else {
+                const noResult = document.createElement('div');
+                noResult.className = 'p-6 text-center text-on-surface-variant font-body-sm';
+                noResult.innerText = 'No authentic places found on page.';
+                resultsContainer.appendChild(noResult);
+            }
+
+            // Always append a "Search Internet" option
+            const internetSearchDiv = document.createElement('div');
+            internetSearchDiv.className = 'flex items-center gap-4 p-4 hover:bg-surface-container-low cursor-pointer transition-colors border-t border-white/10 text-left';
+            internetSearchDiv.innerHTML = `
+                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <span class="material-symbols-outlined">travel_explore</span>
+                </div>
+                <div>
+                    <div class="font-headline-sm text-on-surface text-sm mb-1">Search the web</div>
+                    <div class="text-on-surface-variant font-body-sm text-xs line-clamp-1">Find "${e.target.value}" on Google</div>
+                </div>
+            `;
+            internetSearchDiv.addEventListener('click', () => {
+                window.open('https://www.google.com/search?q=' + encodeURIComponent(e.target.value), '_blank');
+                resultsContainer.classList.add('hidden');
+                searchInput.value = '';
+            });
+            resultsContainer.appendChild(internetSearchDiv);
+        });
+
+        // Add Enter key listener for internet search
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && e.target.value.trim().length > 0) {
+                window.open('https://www.google.com/search?q=' + encodeURIComponent(e.target.value.trim()), '_blank');
+                resultsContainer.classList.add('hidden');
+                searchInput.value = '';
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!searchWrapper.contains(e.target)) {
+                resultsContainer.classList.add('hidden');
+            }
+        });
+    </script>
+    <script>
+        const categoryData = {
+            riverside: [
+                {
+                    name: "Garjiya Devi Temple",
+                    distance: "14 km from Ramnagar",
+                    desc: "Sacred Shakti temple on a rock in the Kosi River, just outside main Corbett tourism zones. Perfect for spiritual escapes, riverside walks, bonfire camping and sunset photography. Nearby resorts offer in-house adventure activities, campfires and stargazing sessions."
+                },
+                {
+                    name: "Kosi River Camps",
+                    distance: "12-16 km from Ramnagar",
+                    desc: "Luxury riverside camping and resort stays along the Kosi River. Experience bonfire evenings, river activities, nature walks and authentic outdoor dining under stars. Premium resorts collaborate with local astronomy groups for stargazing packages."
+                },
+                {
+                    name: "Riverside Cafés",
+                    distance: "Various locations",
+                    desc: "Forest-edge cafés with river views offering authentic local cuisine and calm luxury escapes. Popular spots for photography, relaxation and social gatherings with premium service in natural settings."
+                }
+            ],
+            wildlife: [
+                {
+                    name: "Bijrani Safari Zone",
+                    distance: "Core Corbett zone",
+                    desc: "Tiger sightings, elephant herds and rich biodiversity. One of the most active zones in Jim Corbett National Park. Morning and evening safari options with experienced guides and naturalist commentary."
+                },
+                {
+                    name: "Jhirna Safari Zone",
+                    distance: "Core Corbett zone",
+                    desc: "Scenic grasslands and water bodies attracting diverse wildlife. Known for bird sightings and large herbivores. Lower crowd levels with quality wildlife viewing experiences throughout the season."
+                },
+                {
+                    name: "Birdwatching Trails",
+                    distance: "Various locations near Corbett",
+                    desc: "Guided birdwatching expeditions showcasing 600+ species including eagles, hornbills and kingfishers. Professional guides with binoculars and field guides for photography and observation."
+                }
+            ],
+            hidden: [
+                {
+                    name: "Secret Whispering Trail",
+                    distance: "Within Corbett sanctuary",
+                    desc: "Curated forest path used by local conservationists. Intimate nature walk through sal forests with opportunities for wildlife observation and nature photography. Limited access for exclusive experiences."
+                },
+                {
+                    name: "Silent Orchid Groves",
+                    distance: "Forest edge locations",
+                    desc: "Hidden botanical areas rich with tropical orchids and unique flora. Premium photography spots and nature sanctuary experiences for travelers seeking quiet, exclusive moments away from main zones."
+                },
+                {
+                    name: "Corbett Falls Hidden Loop",
+                    distance: "8.7 km from stay areas",
+                    desc: "Scenic waterfall accessible via lesser-known hiking route. Long-exposure photography paradise with moss-covered rocks and silky water effects. Serene sanctuary atmosphere perfect for peaceful retreats and nature immersion."
+                }
+            ]
+        };
+
+        function showResults(category) {
+            const modal = document.getElementById('resultsModal');
+            const content = document.getElementById('resultsContent');
+            const places = categoryData[category];
+
+            let html = `<h2 class="font-headline-lg text-headline-lg text-white mb-6">${category.charAt(0).toUpperCase() + category.slice(1)} Experiences Around Corbett</h2>`;
+
+            places.forEach((place, idx) => {
+                html += `
+    <div class="bg-surface-container-low rounded-2xl p-8 custom-shadow border border-outline-variant/30 text-on-surface">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h3 class="font-headline-md text-headline-md text-primary mb-1">${place.name}</h3>
+          <p class="text-on-surface-variant font-body-sm flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px]">location_on</span>
+            ${place.distance}
+          </p>
+        </div>
+        <button onclick="window.open('https://www.google.com/search?q=${encodeURIComponent(place.name + ' Corbett')}', '_blank')" class="px-4 py-2 bg-primary text-white font-label-lg text-label-lg rounded-full hover:opacity-90 transition-all whitespace-nowrap">Search More</button>
+      </div>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-4">${place.desc}</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-on-surface-variant text-body-sm">
+        <div class="bg-surface-container-highest p-3 rounded-xl"><span class="font-semibold">Premium</span><br/>Service</div>
+        <div class="bg-surface-container-highest p-3 rounded-xl"><span class="font-semibold">Expert</span><br/>Guides</div>
+        <div class="bg-surface-container-highest p-3 rounded-xl"><span class="font-semibold">Luxury</span><br/>Stays</div>
+        <div class="bg-surface-container-highest p-3 rounded-xl"><span class="font-semibold">Safe</span><br/>Travel</div>
+      </div>
+    </div>
+    `;
+            });
+
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+            modal.style.flexDirection = 'column';
+        }
+
+        function closeResults() {
+            document.getElementById('resultsModal').classList.add('hidden');
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeResults();
+        });
+
+        // Close modal on background click
+        document.getElementById('resultsModal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'resultsModal') closeResults();
+        });
+    </script>
+</body>
+
+</html>

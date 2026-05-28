@@ -1,5 +1,0 @@
-window.APP_CONFIG = {
-  WHATSAPP: "919205765377",
-  UPI_ID: "9953066117@bhdfc",
-  RAZORPAY_KEY: "rzp_test_ScHcH7Smc0A1MU"
-};

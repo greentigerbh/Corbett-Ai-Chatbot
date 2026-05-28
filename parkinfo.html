@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style="">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Corbett Tiger Reserve | Wild Luxury Experience</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Manrope:wght@400;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#0a2014",
+            "primary-container": "#1a2f23",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#653e0b",
+            "tertiary-container": "#2b2b2a",
+            "on-surface": "#e5e2de",
+            "on-secondary": "#492900",
+            "surface-dim": "#131311",
+            "primary-fixed": "#d0e9d6",
+            "surface-container-high": "#2a2a28",
+            "primary-fixed-dim": "#b4ccbb",
+            "deep-forest": "#0D1A13",
+            "surface-variant": "#353532",
+            "clay-earth": "#8B5E3C",
+            "secondary-container": "#68400d",
+            "secondary": "#f6bb7e",
+            "outline-variant": "#424843",
+            "inverse-surface": "#e5e2de",
+            "error-container": "#93000a",
+            "tertiary": "#c8c6c4",
+            "on-primary-container": "#809787",
+            "overcast-charcoal": "#1F1F1F",
+            "surface": "#131311",
+            "on-background": "#e5e2de",
+            "on-primary-fixed-variant": "#364c3e",
+            "surface-container-low": "#1c1c19",
+            "error": "#ffb4ab",
+            "surface-tint": "#b4ccbb",
+            "primary": "#b4ccbb",
+            "tertiary-fixed-dim": "#c8c6c4",
+            "on-tertiary": "#30302f",
+            "inverse-primary": "#4d6355",
+            "on-tertiary-fixed": "#1b1c1b",
+            "surface-bright": "#3a3937",
+            "on-primary": "#203529",
+            "on-secondary-fixed": "#2c1700",
+            "on-error": "#690005",
+            "on-tertiary-container": "#939290",
+            "surface-container-highest": "#353532",
+            "outline": "#8c928c",
+            "on-surface-variant": "#c2c8c2",
+            "secondary-fixed-dim": "#f6bb7e",
+            "surface-container-lowest": "#0e0e0c",
+            "surface-container": "#20201d",
+            "on-tertiary-fixed-variant": "#474745",
+            "tertiary-fixed": "#e4e2e0",
+            "inverse-on-surface": "#31302e",
+            "secondary-fixed": "#ffdcbc",
+            "on-secondary-container": "#e6ad71",
+            "tiger-gold": "#E19A4E",
+            "background": "#131311"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "base": "8px",
+            "margin-desktop": "80px",
+            "margin-tablet": "40px",
+            "section-gap": "120px",
+            "margin-mobile": "20px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "body-lg": ["Manrope"],
+            "label-caps": ["Manrope"],
+            "button-text": ["Manrope"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "body-md": ["Manrope"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "display-lg": ["80px", { "lineHeight": "96px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "32px", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "button-text": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #131311;
+      color: #e5e2de;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .glass-panel {
+      background: rgba(32, 32, 29, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .hero-gradient {
+      background: linear-gradient(to bottom, rgba(19, 19, 17, 0) 0%, rgba(19, 19, 17, 0.8) 100%);
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .floating-badge {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .input-group label {
+      transition: all 0.2s ease;
+      transform: translateY(2.5rem);
+      pointer-events: none;
+    }
+
+    .input-group input:focus+label,
+    .input-group input:not(:placeholder-shown)+label,
+    .input-group select:focus+label,
+    .input-group select:valid+label {
+      transform: translateY(0.5rem) scale(0.85);
+      color: #E19A4E;
+    }
+
+    .z-layered {
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-drawer-transition {
+      transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+    }
+
+    .mask-image-fade {
+      mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+  </style>
+</head>
+
+<body class="selection:bg-tiger-gold selection:text-deep-forest overflow-x-hidden">
+  <canvas id="particles-js" width="390" height="10955"></canvas>
+  <header
+    class="fixed top-0 left-0 w-full z-50 px-margin-mobile md:px-margin-desktop py-4 bg-surface/40 backdrop-blur-xl border-b border-white/5 transition-all duration-500"
+    id="top-nav">
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto">
+      <button class="text-on-surface p-2 hover:bg-white/5 rounded-full transition-colors" onclick="toggleDrawer()">
+        <span class="material-symbols-outlined !text-[28px]">menu</span>
+      </button>
+      <div class="flex flex-col items-center">
+        <span class="font-headline-md text-tiger-gold tracking-[0.2em] leading-none mb-1">CORBETT</span>
+        <span class="font-label-caps text-[10px] text-on-surface-variant opacity-60">WILDLIFE TREASURES</span>
+      </div>
+      <a href="javascript:void(0)"
+        onclick="if(window.parent && window.parent.switchTab) { window.parent.switchTab('guide'); } else { window.location.href='index.html'; }"
+        class="text-on-surface p-2 hover:bg-white/5 rounded-full transition-colors" aria-label="Close">
+        <span class="material-symbols-outlined !text-[28px]">close</span>
+      </a>
+    </div>
+  </header>
+  <div
+    class="fixed inset-y-0 left-0 z-[70] flex flex-col p-8 bg-surface-container-lowest/95 backdrop-blur-2xl h-full w-full md:w-96 shadow-2xl -translate-x-full nav-drawer-transition"
+    id="nav-drawer">
+    <div class="flex justify-between items-center mb-16">
+      <span class="font-headline-md text-on-surface">EXPLORE</span>
+      <button class="text-on-surface-variant hover:rotate-90 transition-transform duration-300"
+        onclick="toggleDrawer()">
+        <span class="material-symbols-outlined !text-[32px]">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-2">
+      <a class="group flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-all" href="#About"
+        onclick="toggleDrawer()">
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined text-tiger-gold">nature_people</span>
+          <span class="font-body-lg text-on-surface group-hover:translate-x-2 transition-transform">About the
+            Reserve</span>
+        </div>
+        <span
+          class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+      </a>
+      <a class="group flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-all"
+        href="#Geography" onclick="toggleDrawer()">
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined text-tiger-gold">map</span>
+          <span class="font-body-lg text-on-surface group-hover:translate-x-2 transition-transform">Geography</span>
+        </div>
+        <span
+          class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+      </a>
+      <a class="group flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-all" href="#History"
+        onclick="toggleDrawer()">
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined text-tiger-gold">history_edu</span>
+          <span class="font-body-lg text-on-surface group-hover:translate-x-2 transition-transform">Our History</span>
+        </div>
+        <span
+          class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+      </a>
+      <a class="group flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-all" href="#Zones"
+        onclick="toggleDrawer()">
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined text-tiger-gold">landscape</span>
+          <span class="font-body-lg text-on-surface group-hover:translate-x-2 transition-transform">Safari Zones</span>
+        </div>
+        <span
+          class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+      </a>
+    </nav>
+    <div class="mt-auto p-6 rounded-3xl bg-tiger-gold/10 border border-tiger-gold/20">
+      <p class="font-label-caps text-tiger-gold mb-2">PROTECT THE WILD</p>
+      <p class="font-body-md text-on-surface-variant text-sm">Join our mission in preserving the crown jewel of India's
+        wildlife conservation.</p>
+    </div>
+  </div>
+  <div class="fixed inset-0 bg-black/80 z-[65] hidden opacity-0 transition-opacity duration-500" id="drawer-overlay"
+    onclick="toggleDrawer()"></div>
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section class="relative h-[100svh] w-full flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0 scale-110" id="hero-parallax">
+        <img alt="Majestic Royal Bengal Tiger" class="w-full h-full object-cover mask-image-fade"
+          src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1600&q=80">
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 px-margin-mobile text-center max-w-5xl">
+        <div class="floating-badge mb-12 inline-block transition-transform duration-300" id="hero-badge">
+          <div class="glass-panel py-3 px-8 rounded-full border-tiger-gold/30 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-tiger-gold animate-pulse"></span>
+            <span class="font-label-caps text-tiger-gold tracking-[0.2em] text-[10px]">ESTABLISHED 1936</span>
+          </div>
+        </div>
+        <h1 class="font-display-lg text-on-surface text-[44px] md:text-[100px] leading-[1.1] mb-8 reveal active">
+          Wildlife Treasures <br>
+          <span class="text-tiger-gold italic font-normal">Of INDIA</span>
+        </h1>
+        <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 reveal active"
+          style="transition-delay: 200ms;">
+          Experience the majestic silence of Asia's first National Park.
+        </p>
+        <div class="reveal active" style="transition-delay: 400ms;">
+          <button
+            class="bg-tiger-gold text-deep-forest font-button-text px-12 py-5 rounded-xl hover:scale-105 hover:shadow-[0_0_30px_rgba(225,154,78,0.4)] transition-all duration-500 active:scale-95"
+            onclick="document.getElementById('BookSafari').scrollIntoView({behavior: 'smooth'})">
+            BEGIN EXPEDITION
+          </button>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+        <span class="material-symbols-outlined !text-[32px]">keyboard_double_arrow_down</span>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface relative overflow-hidden"
+      id="About">
+      <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div class="relative group reveal active">
+          <div class="absolute -inset-4 bg-tiger-gold/5 blur-3xl group-hover:bg-tiger-gold/10 transition-colors"></div>
+          <div class="relative overflow-hidden rounded-[2.5rem] z-layered">
+            <img alt="Overview"
+              class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-[1.5s]"
+              src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80">
+          </div>
+          <div class="absolute -bottom-8 -right-8 glass-panel p-8 rounded-3xl z-layered hidden md:block">
+            <span class="font-display-lg text-tiger-gold text-6xl block">1,288</span>
+            <span class="font-label-caps text-on-surface-variant text-[10px]">TOTAL AREA SQ. KM</span>
+          </div>
+        </div>
+        <div class="reveal active" style="transition-delay: 200ms;">
+          <span class="font-label-caps text-tiger-gold mb-6 block">OVERVIEW</span>
+          <h2 class="font-headline-lg text-on-surface mb-8 leading-tight">India's First National Park: A Jewel in the
+            Crown</h2>
+          <p class="font-body-lg text-on-surface-variant mb-8 opacity-80 leading-relaxed">
+            Corbett Tiger Reserve (CTR), originally established as Hailey National Park in 1936, is a jewel in the crown
+            of India's wildlife conservation efforts. Located in the Nainital district of Uttarakhand, CTR is not only
+            the first national park in India, but also the first to come under the Project Tiger initiative.
+          </p>
+          <div class="grid grid-cols-2 gap-8 border-t border-white/5 pt-12">
+            <div>
+              <h4 class="font-headline-md text-tiger-gold mb-2">617+</h4>
+              <p class="font-label-caps text-on-surface-variant">PLANT SPECIES</p>
+            </div>
+            <div>
+              <h4 class="font-headline-md text-tiger-gold mb-2">580+</h4>
+              <p class="font-label-caps text-on-surface-variant">BIRD SPECIES</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Geography Section -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="Geography">
+      <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 reveal active">
+          <span class="font-label-caps text-tiger-gold mb-6 block">GEOGRAPHY</span>
+          <h2 class="font-headline-lg text-on-surface mb-8">Diverse Terrain</h2>
+          <div class="glass-panel p-10 rounded-[2.5rem] border-white/5">
+            <p class="font-body-lg text-on-surface-variant leading-relaxed mb-6">
+              Covering 1288.31 sq.km., the reserve's diverse landscape includes hills, riverine area grasslands, and a
+              large waterbody. It has an elevation range of 1,300 to 4,000 feet and features sub-Himalayan ecological
+              characteristics.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-tiger-gold">
+                <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                <span class="font-body-md text-on-surface">Sub-Himalayan Ecosystem</span>
+              </li>
+              <li class="flex items-center gap-3 text-tiger-gold">
+                <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                <span class="font-body-md text-on-surface">Ramganga River Reservoir</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lg:col-span-7 reveal active" style="transition-delay: 200ms;">
+          <div class="rounded-[2.5rem] overflow-hidden z-layered h-[600px]">
+            <img alt="Landscape"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80">
+          </div>
+          <div
+            class="mt-8 glass-panel p-12 rounded-[2.5rem] border-white/5 flex flex-col items-center justify-center gap-4 group hover:bg-white/5 transition-all duration-500">
+            <div
+              class="w-16 h-16 rounded-full bg-tiger-gold/10 flex items-center justify-center border border-tiger-gold/20 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-tiger-gold !text-[32px]">image</span>
+            </div>
+            <p class="font-label-caps text-on-surface-variant opacity-60 tracking-[0.2em] text-[10px]">LANDSCAPE
+              REFERENCE</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Zones Grid -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="Zones">
+      <div class="text-center mb-20 reveal active">
+        <span class="font-label-caps text-tiger-gold mb-4 block">DESTINATIONS</span>
+        <h2 class="font-headline-lg text-on-surface">Explore Safari Zones</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
+        <!-- Zone Card 1 -->
+        <div class="group relative overflow-hidden rounded-[2rem] h-[500px] z-layered reveal active"
+          style="transition-delay: 100ms; cursor:pointer;"
+          onclick="window.open('https://www.google.com/search?q=Dhikala+Corbett','_blank')" tabindex="0"
+          onkeypress="if(event.key==='Enter')window.open('https://www.google.com/search?q=Dhikala+Corbett','_blank')">
+          <img alt="Dhikala - Royal Bengal Tiger"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="https://jimcorbett.in/front/asset/img/mainimg/safari/Why-Choose-Jim-Corbett-for-a-Jungle-Safari-(Side-Img).jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div
+            class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="font-headline-md text-on-surface mb-3">Dhikala</h4>
+            <p
+              class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm leading-relaxed mb-6">
+              The most sought-after zone. Landscape includes dense Sal forests and expansive grasslands of the Ramganga
+              River.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-tiger-gold font-label-caps text-[10px]">PREMIUM ZONE</span>
+              <span
+                class="material-symbols-outlined text-on-surface group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Zone Card 2 -->
+        <div class="group relative overflow-hidden rounded-[2rem] h-[500px] z-layered reveal active"
+          style="transition-delay: 200ms; cursor:pointer;"
+          onclick="window.open('https://www.google.com/search?q=Bijrani+Corbett','_blank')" tabindex="0"
+          onkeypress="if(event.key==='Enter')window.open('https://www.google.com/search?q=Bijrani+Corbett','_blank')">
+          <img alt="Bijrani - Royal Bengal Tiger"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="https://media-cdn.tripadvisor.com/media/photo-o/1c/db/1d/e9/jim-corbett-trip.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div
+            class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="font-headline-md text-on-surface mb-3">Bijrani</h4>
+            <p
+              class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm leading-relaxed mb-6">
+              Recognized as one of the park's prime tiger habitats with expansive waterways and lush greenery.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-tiger-gold font-label-caps text-[10px]">TIGER SIGHTINGS</span>
+              <span
+                class="material-symbols-outlined text-on-surface group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Zone Card 3 -->
+        <div class="group relative overflow-hidden rounded-[2rem] h-[500px] z-layered reveal active"
+          style="transition-delay: 300ms; cursor:pointer;"
+          onclick="window.open('https://www.google.com/search?q=Jhirna+Corbett','_blank')" tabindex="0"
+          onkeypress="if(event.key==='Enter')window.open('https://www.google.com/search?q=Jhirna+Corbett','_blank')">
+          <img alt="Jhirna - Royal Bengal Tiger"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="https://static.toiimg.com/thumb/129541747.jpg?photoid=129541747&imgsize=116006&width=600&height=335&resizemode=75">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div
+            class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="font-headline-md text-on-surface mb-3">Jhirna</h4>
+            <p
+              class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm leading-relaxed mb-6">
+              Famous for sightings of sloth bears and wild elephants. Open year-round for nature lovers.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-tiger-gold font-label-caps text-[10px]">ALL SEASON</span>
+              <span
+                class="material-symbols-outlined text-on-surface group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Zone Card 4 -->
+        <div class="group relative overflow-hidden rounded-[2rem] h-[500px] z-layered reveal"
+          style="transition-delay: 400ms; cursor:pointer;"
+          onclick="window.open('https://www.google.com/search?q=Garjiya+Corbett','_blank')" tabindex="0"
+          onkeypress="if(event.key==='Enter')window.open('https://www.google.com/search?q=Garjiya+Corbett','_blank')">
+          <img alt="Garjiya - Royal Bengal Tiger"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="https://www.onlinecorbettbooking.com/assets/images/gairal-tour.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div
+            class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="font-headline-md text-on-surface mb-3">Garjiya</h4>
+            <p
+              class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm leading-relaxed mb-6">
+              Highly popular for its dense jungle and high density of tiger sightings near the Kosi river.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-tiger-gold font-label-caps text-[10px]">TIGER RICH</span>
+              <span
+                class="material-symbols-outlined text-on-surface group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Zone Card 5 -->
+        <div class="group relative overflow-hidden rounded-[2rem] h-[500px] z-layered reveal"
+          style="transition-delay: 500ms; cursor:pointer;"
+          onclick="window.open('https://www.google.com/search?q=Phato+Corbett','_blank')" tabindex="0"
+          onkeypress="if(event.key==='Enter')window.open('https://www.google.com/search?q=Phato+Corbett','_blank')">
+          <img alt="Phato - Royal Bengal Tiger"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="https://media.gettyimages.com/id/1168014841/photo/shades-of-light.jpg?s=612x612&w=0&k=20&c=KOr3Yi1KIgh8VPKz7EoRGnuc5jsT-Nj3bqWbLy3--Ns=">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div
+            class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="font-headline-md text-on-surface mb-3">Phato</h4>
+            <p
+              class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm leading-relaxed mb-6">
+              The newest addition to Corbett's eco-tourism, offering raw wilderness and unique tree house stays.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-tiger-gold font-label-caps text-[10px]">NEW FRONTIER</span>
+              <span
+                class="material-symbols-outlined text-on-surface group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Zone Card 6 -->
+        <div class="group relative overflow-hidden rounded-[2rem] h-[500px] z-layered reveal"
+          style="transition-delay: 600ms; cursor:pointer;"
+          onclick="window.open('https://www.google.com/search?q=Seetabani+Corbett','_blank')" tabindex="0"
+          onkeypress="if(event.key==='Enter')window.open('https://www.google.com/search?q=Seetabani+Corbett','_blank')">
+          <img alt="Seetabani - Royal Bengal Tiger"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div
+            class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="font-headline-md text-on-surface mb-3">Seetabani</h4>
+            <p
+              class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm leading-relaxed mb-6">
+              A buffer zone forest offering spiritual peace and a haven for bird watchers and photographers.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-tiger-gold font-label-caps text-[10px]">BIRDING PARADISE</span>
+              <span
+                class="material-symbols-outlined text-on-surface group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Zone Card 7 -->
+        <div class="group relative overflow-hidden rounded-[2rem] h-[500px] z-layered reveal"
+          style="transition-delay: 700ms; cursor:pointer;"
+          onclick="window.open('https://www.google.com/search?q=Durgadevi+Corbett','_blank')" tabindex="0"
+          onkeypress="if(event.key==='Enter')window.open('https://www.google.com/search?q=Durgadevi+Corbett','_blank')">
+          <img alt="Durgadevi - Royal Bengal Tiger"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            src="https://t.eucdn.in/tourism/md/bijrani-1034364.webp">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div
+            class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="font-headline-md text-on-surface mb-3">Durgadevi</h4>
+            <p
+              class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm leading-relaxed mb-6">
+              Known for its undulating terrain and the chance to see the famous Mahseer fish in the Ramganga River.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-tiger-gold font-label-caps text-[10px]">HILL SAFARI</span>
+              <span
+                class="material-symbols-outlined text-on-surface group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- History Timeline -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="History">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-headline-lg text-on-surface mb-24 text-center reveal active">Historical Legacy</h2>
+        <div class="relative border-l border-white/10 ml-6 md:ml-0 md:flex md:flex-col md:items-center">
+          <!-- Event 1 -->
+          <div class="mb-20 pl-12 md:pl-0 md:w-full md:flex reveal active">
+            <div class="md:w-1/2 md:pr-16 md:text-right">
+              <span class="font-display-lg text-tiger-gold text-5xl mb-4 block">1860s</span>
+              <h4 class="font-headline-md text-on-surface mb-2">The Foundations</h4>
+              <p class="font-body-md text-on-surface-variant opacity-70">Major Ramsay establishes colonial control to
+                protect the region from excessive exploitation.</p>
+            </div>
+            <div
+              class="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-[10px] h-[10px] bg-tiger-gold rounded-full shadow-[0_0_15px_rgba(225,154,78,1)] mt-4">
+            </div>
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+          <!-- Event 2 -->
+          <div class="mb-20 pl-12 md:pl-0 md:w-full md:flex md:flex-row-reverse reveal active">
+            <div class="md:w-1/2 md:pl-16">
+              <span class="font-display-lg text-tiger-gold text-5xl mb-4 block">1936</span>
+              <h4 class="font-headline-md text-on-surface mb-2">Asia's First</h4>
+              <p class="font-body-md text-on-surface-variant opacity-70">Hailey National Park is established as mainland
+                Asia's first official National Park.</p>
+            </div>
+            <div
+              class="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-[10px] h-[10px] bg-tiger-gold rounded-full shadow-[0_0_15px_rgba(225,154,78,1)] mt-4">
+            </div>
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+          <!-- Event 3 -->
+          <div class="mb-0 pl-12 md:pl-0 md:w-full md:flex reveal active">
+            <div class="md:w-1/2 md:pr-16 md:text-right">
+              <span class="font-display-lg text-tiger-gold text-5xl mb-4 block">1956</span>
+              <h4 class="font-headline-md text-on-surface mb-2">Honoring a Legend</h4>
+              <p class="font-body-md text-on-surface-variant opacity-70">The park is renamed in honor of Jim Corbett,
+                the legendary hunter turned conservationist.</p>
+            </div>
+            <div
+              class="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-[10px] h-[10px] bg-tiger-gold rounded-full shadow-[0_0_15px_rgba(225,154,78,1)] mt-4">
+            </div>
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-surface-container-lowest pt-24 pb-12 px-margin-mobile md:px-margin-desktop border-t border-white/5">
+    <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+      <div class="lg:col-span-1">
+        <span class="font-headline-md text-tiger-gold block mb-6">CORBETT</span>
+        <p class="font-body-md text-on-surface-variant opacity-60 leading-relaxed">
+          Preserving India's wild heritage since 1936. Sustainably managing the world's highest density tiger habitat.
+        </p>
+      </div>
+      <div>
+        <h6 class="font-label-caps text-on-surface mb-8">NAVIGATION</h6>
+        <ul class="space-y-4 font-body-md text-on-surface-variant text-sm">
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#About">Our Mission</a></li>
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#Geography">Flora &amp; Fauna</a></li>
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#Zones">Safari Zones</a></li>
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#History">Archive</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="font-label-caps text-on-surface mb-8">LEGAL</h6>
+        <ul class="space-y-4 font-body-md text-on-surface-variant text-sm">
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#">Park Rules</a></li>
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#">Privacy Policy</a></li>
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#">Sitemap</a></li>
+          <li class=""><a class="hover:text-tiger-gold transition-colors" href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="font-label-caps text-on-surface mb-8">FOLLOW THE WILD</h6>
+        <div class="flex gap-6">
+          <a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-tiger-gold hover:text-deep-forest transition-all"
+            href="#">
+            <span class="material-symbols-outlined !text-[20px]">share</span>
+          </a>
+          <a class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-tiger-gold hover:text-deep-forest transition-all"
+            href="#">
+            <span class="material-symbols-outlined !text-[20px]">photo_camera</span>
+          </a>
+        </div>
+        <div class="mt-8">
+          <p class="text-[10px] font-label-caps text-on-surface-variant opacity-40">ADMIN OFFICE</p>
+          <p class="text-xs text-on-surface-variant mt-1">Ramnagar, Nainital, Uttarakhand-244715</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center pt-12 border-t border-white/5">
+      <span class="font-label-caps text-[10px] text-on-surface-variant opacity-40">© 2024 CORBETT TIGER RESERVE. ALL
+        RIGHTS RESERVED.</span>
+    </div>
+  </footer>
+  <script>
+    // Smooth Reveal IntersectionObserver
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Navigation Toggle
+    function toggleDrawer() {
+      const drawer = document.getElementById('nav-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const isOpen = drawer.classList.contains('translate-x-0');
+
+      if (isOpen) {
+        drawer.classList.remove('translate-x-0');
+        drawer.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        overlay.classList.remove('opacity-100');
+      } else {
+        drawer.classList.add('translate-x-0');
+        drawer.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.add('opacity-100'), 10);
+      }
+    }
+
+    // 3D Tilt Effect for Hero Badge
+    const badge = document.getElementById('hero-badge');
+    window.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return;
+      const x = (window.innerWidth / 2 - e.pageX) / 25;
+      const y = (window.innerHeight / 2 - e.pageY) / 25;
+      badge.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+
+    // Hero Parallax
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroBg = document.getElementById('hero-parallax');
+      heroBg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
+    });
+
+    // Simple Particle System (Forest Embers)
+    const canvas = document.getElementById('particles-js');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function initParticles() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      for (let i = 0; i < 40; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2 + 1,
+          speedX: Math.random() * 0.5 - 0.25,
+          speedY: Math.random() * 0.5 - 0.25,
+          opacity: Math.random() * 0.5
+        });
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(225, 154, 78, ${p.opacity})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>

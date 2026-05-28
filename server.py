@@ -1,4 +1,4 @@
-"""Static server + Groq proxy + Google Sheets proxy. Run: python server.py"""
+"""Static server + Groq proxy + Google Sheets proxy. Run: python server.py"""  
 import json
 import os
 import urllib.request
@@ -63,7 +63,9 @@ class Handler(SimpleHTTPRequestHandler):
             "model": data.get("model", "llama-3.3-70b-versatile"),
             "messages": data.get("messages", []),
             "temperature": data.get("temperature", 0.7),
-            "max_tokens": data.get("max_tokens", 512),
+            "max_tokens": data.get("max_tokens", 2048),
+            "top_p": data.get("top_p", 0.9),
+            "frequency_penalty": data.get("frequency_penalty", 0.2),
         }).encode()
         req = urllib.request.Request(
             "https://api.groq.com/openai/v1/chat/completions",
